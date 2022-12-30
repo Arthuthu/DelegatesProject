@@ -1,0 +1,45 @@
+A delegate serve como um parametro que aceita methods quando o seu method é chamado, os valores de input e output dos methods devem bater
+para que o código funcione.
+
+----------------------------//----------------------------//----------------------------//----------------------------//
+
+Delegate
+
+O tipo normal de delegate precisa ser declarado: 
+
+public delegate void MentionDiscount(decimal subtotal);
+
+Utilização da delegate no method:
+
+GenerateTotal(MentionDiscount mentionDiscount)
+
+Quando o method GenerateTotal for chamado, é preciso inserir um method que bata com os parametros e o valor que sera
+retornado, nesse caso essa delegate mentionDiscount é void e recebe um parametro do tipo decimal.
+
+Portanto é precisa utilizar um método compativel com o return e parametro.
+
+----------------------------//----------------------------//----------------------------//----------------------------//
+
+Delegate tipo Func
+
+A delegate tipo func recebe varios parametros, todos os seus parametros iniciais são de input,
+e o seu ultimo parametro é de output (return)
+
+Exemplo: 
+
+Func<List<ProductModel>, decimal, decimal>
+
+Esse método recebe parametros de List<ProductModel> decimal e retorna um valor decimal
+
+----------------------------//----------------------------//----------------------------//----------------------------//
+
+
+Delegate tipo Action
+
+A delegate tipo Action funciona igual a Func porem ela não retorna nenhum valor, pois seu tipo é somente void
+Você pode passar parametros para ela que sera usado pelo method, exemplo: 
+
+Action<string> nomeDaDelegate
+
+Quando um method for colocado no lugar dessa delegate, é necessario que ele tenha um parametro do tipo string.
+
